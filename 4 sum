@@ -1,0 +1,27 @@
+class Solution(object):
+    def fourSum(self, nums, target):
+        nums.sort()
+        result=[]
+        for i in range(len(nums)):
+            if i>0 and nums[i]==nums[i-1]:
+                continue
+            for j in range(i+1,len(nums)):
+                if j>i+1 and nums[j]==nums[j-1]:
+                    continue
+                left=j+1
+                right=len(nums)-1
+                while left<right:
+                    current_sum=nums[i]+nums[left]+nums[right]+nums[j]                
+                    if current_sum>target:
+                        right-=1
+                    elif current_sum<target:
+                        left+=1
+                    else:
+                        result.append([nums[i],nums[left],nums[right],nums[j]])
+                        a=nums[left]
+                        while left<right and nums[left]==a:
+                            left+=1
+                        b=nums[right]    
+                        while left<right and nums[right]==b:
+                            right-=1
+        return result
