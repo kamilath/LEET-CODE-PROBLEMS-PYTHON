@@ -1,12 +1,13 @@
 class Solution(object):
     def maxArea(self, h):
-        l=0
-        r=len(h)-1
-        water=0
-        while l<r:
-            water=max(water,(r-l)*min(h[l],h[r]))
-            if h[l]<h[r]:
-                l+=1
+        left=0
+        right=len(h)-1
+        maxi=0
+        while left<right:
+            curr=min(h[left],h[right])*(right-left)
+            maxi=max(maxi,curr)
+            if h[left]<h[right]:
+                left+=1
             else:
-                r-=1
-        return  water  
+                right-=1
+        return maxi  
