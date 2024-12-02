@@ -1,0 +1,30 @@
+class Solution(object):
+    def findSubstring(self, s, words):
+        if not s or not words:
+            return []
+        w_length=len(words[0]) 
+        w_count=len(words)   
+        total=w_length*w_count
+        counts={}
+        for word in words:
+            if word in counts:
+                counts[word]+=1
+            else:
+                counts[word]=1 
+        result=[]           
+        for i in range(len(s)-total+1):
+            substring=s[i:i+total]
+            seen={}
+            for j in range(0,total,w_length):
+                w=substring[j:j+w_length]
+                if w in seen:
+                    seen[w]+=1
+                else:
+                    seen[w]=1
+            if seen==counts:
+                result.append(i)  
+        return result                  
+
+
+        
+        
