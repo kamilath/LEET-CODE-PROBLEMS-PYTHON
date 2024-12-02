@@ -1,0 +1,16 @@
+class Solution(object):
+    def generateParenthesis(self, n):
+        result=[]
+        def backtracking(openN,closeN,current):
+            if openN==closeN==n:
+                result.append(current)
+                return
+            if openN<n:
+                backtracking(openN+1,closeN,current+'(')   
+            if openN>closeN:
+                backtracking(openN,closeN+1,current+')') 
+        backtracking(0,0,"")  
+        return result         
+
+        
+        
