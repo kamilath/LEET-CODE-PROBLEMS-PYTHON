@@ -1,21 +1,21 @@
 class Solution(object):
     def trap(self, height):
-        leftmax=0
-        rightmax=0
+        if len(height)<=2:
+            return 0
+        ans=0
         left=0
-        right=len(height)-1
-        t=0
-        while left<right:
-            if height[left]<height[right]:
-                if height[left]>=leftmax:
-                    leftmax=height[left]
-                else:
-                    t+=leftmax-height[left]   
+        right=len(height)-1    
+        lmax=height[0]
+        rmax=height[-1]
+        while left<=right:
+            if lmax<height[left]:
+                lmax=height[left]
+            if rmax<height[right]:
+                rmax=height[right]    
+            if lmax<=rmax:
+                ans+=lmax-height[left]    
                 left+=1
             else:
-                if height[right]>=rightmax:
-                    rightmax=height[right]
-                else:
-                    t+=rightmax-height[right]   
+                ans+=rmax-height[right]   
                 right-=1
-        return t        
+        return ans 
