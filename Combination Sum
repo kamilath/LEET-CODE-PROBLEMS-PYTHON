@@ -1,0 +1,16 @@
+class Solution(object):
+    def combinationSum(self, candidates, target):
+        result=[]
+        def backtrack(r_target,combo,start):
+            if r_target==0:
+                result.append(list(combo))
+                return
+            if r_target<0:
+                return  
+            for i in range(start,len(candidates)):
+                combo.append(candidates[i])    
+                backtrack(r_target-candidates[i],combo,i)  
+                combo.pop()
+        backtrack(target,[],0)   
+        return result     
+        
