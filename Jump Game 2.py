@@ -1,11 +1,11 @@
 class Solution(object):
     def jump(self, nums):
-        end=0
-        maxi=0
+        current=0
+        dist=0
         jump=0
         for i in range(len(nums)-1):
-            maxi=max(maxi,i+nums[i])
-            if i==end:
+            dist=max(dist,i+nums[i])
+            if i==current:
                 jump+=1
-                end=maxi
-        return jump   
+                current=dist
+        return jump 
