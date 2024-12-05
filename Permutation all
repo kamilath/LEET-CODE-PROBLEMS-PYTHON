@@ -1,0 +1,19 @@
+class Solution(object):
+    def permute(self, nums):
+        permu=[10]*len(nums)
+        ans=[]
+        def solve(nums,permu,c):
+            if c==len(nums):
+                ans.append(list(permu))
+                return
+            for i in range(len(nums)):
+                if permu[i]==10:
+                    permu[i]=nums[c]
+                    solve(nums,permu,c+1)
+                    permu[i]=10
+        solve(nums,permu,0)    
+        return ans  
+-------------------------------------------------------------------------------
+class Solution(object):
+    def permute(self, nums):
+        return list(itertools.permutations(nums))
