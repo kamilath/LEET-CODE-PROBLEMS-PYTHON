@@ -1,0 +1,19 @@
+class Solution(object):
+    def permuteUnique(self, nums):
+        ans=[]
+        permu=[10]*len(nums)
+        nums.sort()
+        def solve(nums,permu,c,used):
+            if c==len(nums):
+                ans.append(list(permu))
+                return
+            for i in range(len(nums)):
+                if used[i] or (i > 0 and nums[i] == nums[i - 1] and not used[i - 1]):
+                    continue
+                used[i] = True
+                permu[c]=nums[i]
+                solve(nums,permu,c+1,used)
+                permu[c]=10
+                used[i]=False
+        solve(nums,permu,0,[False] * len(nums))   
+        return ans         
