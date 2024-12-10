@@ -1,0 +1,15 @@
+class TreeNode(object):
+     def __init__(self, val=0, left=None, right=None):
+         self.val = val
+         self.left = left
+         self.right = right
+class Solution(object):
+    def isValidBST(self, root):
+        def a(node,low,high):
+            if not node:
+                return True
+            if not (low<node.val<high):
+                return False 
+            return a(node.left,low,node.val) and a(node.right,node.val,high)
+
+        return a(root,float('-inf'),float('inf'))
