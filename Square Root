@@ -1,0 +1,5 @@
+class Solution(object):
+    def mySqrt(self, x):
+        s=int(math.sqrt(x))
+        return s
+        
