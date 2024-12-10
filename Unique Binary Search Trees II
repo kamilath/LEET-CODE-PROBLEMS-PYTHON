@@ -1,0 +1,24 @@
+class TreeNode(object):
+     def __init__(self, val=0, left=None, right=None):
+         self.val = val
+         self.left = left
+         self.right = right
+class Solution(object):
+    def generateTrees(self, n):
+        def dfs(nums):
+            if not nums:
+                return [None]
+            res=[]
+            for i in range(len(nums)):
+                Ltree=dfs(nums[:i]) 
+                Rtree=dfs(nums[i+1:])
+                for l in Ltree:
+                    for r in Rtree:
+                        root=TreeNode(nums[i])
+                        root.left=l
+                        root.right=r
+                        res.append(root)
+            return res
+        nums=list(range(1,n+1))  
+        return dfs(nums)              
+        
