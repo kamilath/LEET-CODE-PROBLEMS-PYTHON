@@ -1,0 +1,13 @@
+class Solution(object):
+    def subsetsWithDup(self, nums):
+        nums.sort()
+        res=set()
+        res.add(())
+        for num in nums:
+            a=[]
+            for cur in res:
+                a.append(cur+(num,))
+            for b in a:
+                res.add(b)
+        return [list(x) for x in res]
+        
