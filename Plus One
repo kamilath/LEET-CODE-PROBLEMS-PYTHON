@@ -1,0 +1,8 @@
+class Solution(object):
+    def plusOne(self, digits):
+        s1=int("".join(map(str,digits)))
+        s2=s1+1
+        s2=str(s2)
+        s3=list(map(int,s2))
+        return s3
+    
