@@ -1,0 +1,14 @@
+class Solution(object):
+    def majorityElement(self, nums):
+        dicts={}
+        result=[]
+        for i in nums:
+            if i not in dicts:
+                dicts[i]=1
+            else:
+                dicts[i]+=1
+
+        for key in dicts:
+            if dicts[key]>(len(nums))//3:
+                result.append(key)
+        return result        
