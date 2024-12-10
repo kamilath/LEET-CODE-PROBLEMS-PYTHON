@@ -1,0 +1,13 @@
+class Solution(object):
+    def combine(self, n, k):
+        res=[]
+        def backtrack(index,n,k,combo,res):
+            if len(combo)==k:
+                res.append(combo[:])
+                return
+            for i in range(index,n+1):
+                combo.append(i)    
+                backtrack(i+1,n,k,combo,res)
+                combo.pop()
+        backtrack(1,n,k,[],res)
+        return res
