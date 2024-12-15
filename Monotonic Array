@@ -1,0 +1,9 @@
+class Solution(object):
+    def isMonotonic(self, nums):
+        a=sorted(nums)
+        b=sorted(nums,reverse=True)
+        if a==nums or b==nums:
+            return True
+        else:
+            return False    
+        
