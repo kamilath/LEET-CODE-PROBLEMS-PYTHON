@@ -1,0 +1,13 @@
+class Solution(object):
+    def singleNumber(self, nums):
+        dicts={}
+        for i in nums:
+            if i in dicts:
+                dicts[i]+=1
+            else:
+                dicts[i]=1
+        for key,value in dicts.items():
+            if dicts[key]==1:
+                return key          
+
+        
