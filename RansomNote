@@ -1,0 +1,6 @@
+class Solution(object):
+    def canConstruct(self, ransomNote, magazine):
+        for char in magazine:
+            ransomNote=ransomNote.replace(char,"",1)
+        return ransomNote==""    
+        
