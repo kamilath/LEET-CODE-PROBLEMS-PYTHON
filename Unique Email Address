@@ -1,0 +1,16 @@
+class Solution(object):
+    def numUniqueEmails(self, emails):
+        res=set()
+        for email in emails:
+            local,domain=email.split("@")
+            temp=""
+            for s in local:
+                if s==".":
+                    continue
+                elif s=="+":
+                    break
+                else:
+                    temp+=s
+            res.add(temp + "@" + domain)   
+        return len(res)                
+        
