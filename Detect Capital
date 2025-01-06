@@ -1,0 +1,9 @@
+class Solution(object):
+    def detectCapitalUse(self, word):
+        a=word.upper()
+        b=word.lower()
+        c=word.title()
+        if a==word or b==word or c==word:
+            return True
+        return False     
+        
