@@ -1,0 +1,15 @@
+class Solution(object):
+    def longestPalindrome(self, s):
+        length=0
+        a=set()
+        for char in s:
+            if char in a:
+                length+=2
+                a.remove(char)           
+            else:
+                a.add(char)
+        if a:
+            length+=1
+        return length            
+
+        
