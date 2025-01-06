@@ -1,0 +1,11 @@
+class Solution(object):
+    def longestSubstring(self, s, k):
+        if len(s)<k:
+            return 0
+        for i in set(s):
+            if s.count(i)<k:
+                return max(self.longestSubstring(a,k) for a in s.split(i))
+        return len(s)        
+
+            
+        
