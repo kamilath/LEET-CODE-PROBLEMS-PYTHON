@@ -1,0 +1,56 @@
+class Solution(object):
+    def compress(self, chars):
+        count=1
+        y=0
+        for i in range(1,len(chars)+1):
+            if i==len(chars) or chars[i-1]!=chars[i]:
+                chars[y]=chars[i-1]
+                y+=1
+                if count>1:
+                    for c in str(count):
+                        chars[y]=c
+                        y+=1
+                count=1
+            else:
+                count+=1    
+        return y    
+
+        
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
