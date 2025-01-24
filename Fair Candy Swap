@@ -1,0 +1,14 @@
+class Solution(object):
+    def fairCandySwap(self, aliceSizes, bobSizes):
+        A=sum(aliceSizes)
+        B=sum(bobSizes)
+        dif=(A-B)//2
+        bobSet=set(bobSizes)
+        for x in aliceSizes:
+            y=x-dif
+            if y in bobSet:
+                return [x,y]
+                
+
+
+        
