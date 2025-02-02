@@ -1,0 +1,25 @@
+import numpy as np
+class Solution:
+    def equalPairs(self, grid: List[List[int]]) -> int:
+        df=np.array(grid)
+        a=df.transpose()
+        
+        b=df.tolist()
+        c=a.tolist()
+
+        count=0
+        for i in range(len(grid)):
+            for j in range(len(grid)):
+                if b[i]==c[j]:
+                    count+=1
+        return count            
+--------------------------------------------------------------
+class Solution(object):
+    def equalPairs(self, grid):
+        result = 0
+        for i in range(len(grid)):
+            column = []
+            for j in grid:
+                column.append(j[i])
+            result += grid.count(column)
+        return result            
