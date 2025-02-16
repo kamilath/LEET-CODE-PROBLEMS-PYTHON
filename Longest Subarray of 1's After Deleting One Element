@@ -1,0 +1,10 @@
+class Solution(object):
+    def longestSubarray(self, nums):
+        longest=prev=current=0
+        for bits in nums:
+            if bits:
+                current+=1
+                longest=max(longest,prev+current)
+            else:
+                prev,current=current,0    
+        return longest-(longest==len(nums))
