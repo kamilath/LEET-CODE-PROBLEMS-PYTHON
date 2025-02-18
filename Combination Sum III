@@ -1,0 +1,7 @@
+class Solution(object):
+    def combinationSum3(self, k, n):
+        d=[]
+        for c in combinations(range(1,10),k):
+            if sum(c)==n:
+                d.append(c)
+        return d
