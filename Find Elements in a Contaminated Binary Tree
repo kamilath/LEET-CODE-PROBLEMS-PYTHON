@@ -1,0 +1,20 @@
+class TreeNode(object):
+     def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+class FindElements(object):
+    def __init__(self, root):
+        self.values=set()
+        self.recover_trees(root,0)
+    def recover_trees(self,node,value):
+        if not node:
+            return
+        self.values.add(value)    
+        node.val=value
+        self.recover_trees(node.left,2*value+1)   
+        self.recover_trees(node.right,2*value+2) 
+
+    def find(self, target):
+        return target in self.values
+        
