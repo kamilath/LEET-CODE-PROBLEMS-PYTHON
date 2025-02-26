@@ -1,0 +1,11 @@
+class Solution(object):
+    def maxAbsoluteSum(self, nums):
+        mini=0
+        maxi=0
+        pre=0
+        for i in range(len(nums)):
+            pre+=nums[i]
+            mini=min(mini,pre)
+            maxi=max(maxi,pre)
+        return maxi-mini    
+        
