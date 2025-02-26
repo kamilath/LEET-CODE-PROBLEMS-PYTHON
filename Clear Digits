@@ -1,0 +1,10 @@
+class Solution(object):
+    def clearDigits(self, s):
+        result=[]
+        for c in s:
+            if c in ["0","1","2","3","4","5","6","7","8","9"]: ##isdigit()
+                    result.pop()
+            else:
+                result.append(c)        
+        return "".join(result)        
+        
