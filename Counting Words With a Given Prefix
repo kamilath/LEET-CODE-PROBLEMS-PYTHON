@@ -1,0 +1,15 @@
+class Solution(object):
+    def prefixCount(self, words, pref):
+        count=0
+        for word in words:
+            i,j=0,0
+            while i<len(word) and j<len(pref):
+                if word[i]==pref[j]:
+                    i+=1
+                    j+=1
+                else:
+                    break
+            if j==len(pref):
+                count+=1
+        return count                
+        
