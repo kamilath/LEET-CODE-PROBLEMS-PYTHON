@@ -1,0 +1,8 @@
+from collections import defaultdict
+class Solution(object):
+    def mergeArrays(self, nums1, nums2):
+        tree=defaultdict(int)
+        for id, val in nums1+nums2:
+            tree[id]+=val
+        return sorted(tree.items())    
+       
