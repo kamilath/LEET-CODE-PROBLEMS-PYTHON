@@ -1,0 +1,15 @@
+class Solution(object):
+    def pivotArray(self, nums, pivot):
+        mini=[]
+        maxi=[]
+        pivots=[]
+        for i in nums:
+            if i>pivot:
+                maxi.append(i)
+            elif i<pivot:
+                mini.append(i)
+            else:
+                pivots.append(i) 
+        return mini+pivots+maxi             
+
+        
