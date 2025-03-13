@@ -1,0 +1,13 @@
+class Solution(object):
+    def coloredCells(self, n):
+        count=1
+        n-=1
+        while n>0:
+            count+=n*4
+            n-=1
+        return count    
+---------------------------------------------
+class Solution(object):
+    def coloredCells(self, n):
+        return 2*n*(n-1)+1
+        
