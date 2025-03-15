@@ -1,0 +1,11 @@
+class Solution(object):
+    def addSpaces(self, s, spaces):
+        s1=[]
+        spaces=set(spaces)   
+        for i in range(len(s)):
+            if i in spaces:
+                s1.append(" ")
+            s1.append(s[i])    
+        return "".join(s1)    
+        
+        
