@@ -1,0 +1,14 @@
+class Solution(object):
+    def addDigits(self, num):
+        if num%9!=0 or num==0:
+            return num%9
+        else:
+            return 9    
+--------------------------------------------------------
+class Solution(object):
+    def addDigits(self, num):
+        if num==0:
+            return 0
+        return 1+(num-1)%9     
+        
+        
