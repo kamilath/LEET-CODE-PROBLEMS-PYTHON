@@ -1,0 +1,9 @@
+class Solution(object):
+    def divideArray(self, nums):
+        leng=len(nums)//2
+        nums.sort()
+        for i in range(0,len(nums),2):
+            j=i+1  
+            if nums[i]!=nums[j]:
+                return False
+        return True        
