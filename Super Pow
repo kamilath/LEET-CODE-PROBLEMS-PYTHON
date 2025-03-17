@@ -1,0 +1,4 @@
+class Solution(object):
+    def superPow(self, a, b):
+        exp=int("".join(map(str,b)))
+        return pow(a,exp,1337)
