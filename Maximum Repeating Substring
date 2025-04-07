@@ -1,0 +1,12 @@
+class Solution(object):
+    def maxRepeating(self, sequence, word):
+        count=0
+        temp=word
+        while temp in sequence:
+            temp+=word
+            count+=1
+        return count    
+
+
+        
+        
