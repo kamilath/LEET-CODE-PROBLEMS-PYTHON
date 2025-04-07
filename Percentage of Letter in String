@@ -1,0 +1,6 @@
+class Solution(object):
+    def percentageLetter(self, s, letter):
+        d=s.count(letter)
+        t=d*100
+        return t/len(s)
+        
