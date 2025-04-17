@@ -1,0 +1,24 @@
+class Solution(object):
+    def uncommonFromSentences(self, s1, s2):
+        a=s1.split()
+        b=s2.split()
+        dict={}
+        for i in a:
+            if i in dict:
+                dict[i]+=1
+            else:
+                dict[i]=1
+        for i in b:
+            if i in dict:
+                dict[i]+=1
+            else:
+                dict[i]=1
+        arr=[]
+        for key,value in dict.items():
+            if value==1:
+                arr.append(key)    
+        return arr              
+
+
+        
+        
